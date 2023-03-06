@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Create Account</title>
+	<link th:href="@{/styles/BankingAppStyle.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>Create Account</h1>
+	<form action="#" th:action="@{./addAccount}" th:object="${account}" method="post">
+		Account Type: 
+			<select th:field="*{type}">
+				<option th:value="Savings" th:text="Savings"></option>
+				<option th:value="Checking" th:text="Checking"></option>
+			</select><br><br>
+		Balance: 
+			<input type="text" th:field="*{balance}"><br><br>
+		<input type="submit" value="Create">
+	</form>
+	<form action="./viewAllAccounts">
+		<input type="submit" value="Back"><br><br>
+	</form>
+	<p th:text="${Created}" style="color: Green"></p>
+	<p th:text="${NotCreated}" style="color: Red"></p>
+</body>
+</html>

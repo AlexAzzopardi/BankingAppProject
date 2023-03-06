@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Banking App Login</title>
+	<link th:href="@{/styles/BankingAppStyle.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>Login to my Banking App</h1>
+	<form action="#" th:action="@{./loginUser}" th:object="${user}" method="post">
+		Enter Username: <input type="text" th:field="*{userName}"><br><br>
+		Enter Password: <input type="password" th:field="*{userPassword}"><br><br>
+		<input type="submit" value="Sign-In">
+	</form>
+	<form action="./addUserPage">
+		<input type="submit" value="Sign-Up">
+	</form>
+	<p th:text="${Message}" style="color: red"></p>
+</body>
+</html>

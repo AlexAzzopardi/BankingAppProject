@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Create User</title>
+	<link th:href="@{/styles/BankingAppStyle.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>Create User</h1>
+	<form action="#" th:action="@{./addUser}" th:object="${user}" method="post">
+		Username: 
+			<input type="text" th:field="*{userName}"><br><br>
+		Password: 
+			<input type="text" th:field="*{userPassword}"><br><br>
+		<input type="submit" value="Create">
+	</form>
+	<form action="./">
+		<input type="submit" value="Back"><br><br>
+	</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Accounts</title>
+	<link th:href="@{/styles/BankingAppStyle.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>Accounts</h1>
+	<table border="1">
+		<tr>
+			<th>Account ID</th>
+			<th>Type</th>
+			<th>Balance</th>
+		</tr>
+		<tr th:each="account : ${accounts}">
+			<td th:text="${account.accountId}"></td>
+			<td th:text="${account.type}"></td>
+			<td th:text="${account.balance}"></td>
+		</tr>
+	</table><br><br>
+	<form action="./addAccountPage">
+		<input type="submit" value="Add-Account">
+	</form>
+	<form action="./mainMenu">
+		<input type="submit" value="Back">
+	</form>
+</body>
+</html>

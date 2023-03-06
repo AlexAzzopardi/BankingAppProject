@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Transfer Money</title>
+	<link th:href="@{/styles/BankingAppStyle.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>Transfer Page</h1>
+	<form action="#" th:action="@{./transfered}" th:object="${transaction}" method="post">
+		From: 
+			<select th:field="*{creditAccountId}">
+				<option th:each="account : ${accounts}" th:value="${account.accountId}" th:text="${account.accountId} + '. ' + ${account.type} + ' - ' + ${account.balance}"></option>
+				<option th:value="0" th:text="External"></option>
+			</select><br><br>
+		Sending To:
+			<select th:field="*{debitAccountId}">
+				<option th:each="account : ${accounts}" th:value="${account.accountId}" th:text="${account.accountId} + '. ' + ${account.type} + ' - ' + ${account.balance}"></option>
+				<option th:value="0" th:text="External"></option>
+			</select><br><br>
+		Amount: 
+			<input type="text" th:field="*{amount}"><br><br>
+		<input type="submit" value="Transfer">
+	</form>
+	<form action="./mainMenu">
+		<input type="submit" value="Back">
+	</form>
+	<p th:text="${Transfered}" style="color: Green"></p>
+	<p th:text="${NotTransfered}" style="color: Red"></p>
+</body>
+</html>

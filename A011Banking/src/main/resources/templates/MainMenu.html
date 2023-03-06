@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Banking App Main Menu</title>
+	<link th:href="@{/styles/BankingAppStyle.css}" rel="stylesheet">
+</head>
+<body>
+	<h1>Alex's Banking App</h1>
+	<a href="./viewAllAccounts">View Accounts</a><br><br>
+	<a href="./transfer">Transfer Funds</a><br><br>
+	<a href="./transactionHistory">Transaction History</a><br><br>
+	<form action="./">
+		<input type="submit" value="Log Out"><br><br>
+	</form>
+	<p th:text="${Message}" style="color: Red"></p>
+</body>
+</html>

@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+body{
+	background-color: grey;
+}
+
+h1{
+	color: black;
+	font-family: system-ui;
+}
+
+h2{
+	color: black;
+}
